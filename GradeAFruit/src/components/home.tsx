@@ -1,7 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
 
-const Home: React.FC = () => {
+type HomeProps = {
+    navigation: NavigationScreenProp<NavigationState, NavigationParams>;
+};
+
+const Home: React.FC<HomeProps> = ({ navigation }) => {
+
+  const onPressHandler = () => {
+     navigation.navigate('SignInScreen');
+  }
+
   return (
     <View style={styles.container}>
       <Image style={styles.logo} source={{ uri: "https://images.unsplash.com/photo-1528821128474-27f963b062bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80" }}/>
@@ -9,7 +19,7 @@ const Home: React.FC = () => {
       <Text style={styles.subtitle}>Good or Bad?</Text>
       <Text style={styles.subtitle2}>Fruit Grader</Text>
       <Text style={styles.paragraph}>An App for anyone to help save food by training robots to more accurately differentiate between Good and Bad fruits and vegetables.</Text>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity style={styles.button} onPress={onPressHandler}>
         <Text style={styles.buttonText}>Next</Text>
       </TouchableOpacity>
     </View>
