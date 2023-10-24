@@ -39,6 +39,12 @@ const SignInScreen: React.FC<SignInProps> = ({ navigation }) => {
             <Text style={styles.signInLink}>Sign in</Text>
         </TouchableOpacity>
       </Text>
+      <Text style={styles.agreement}>
+        By creating an account, I accept App's {' '}
+        <TouchableOpacity>
+            <Text style={styles.terms}>Terms of Service</Text>
+        </TouchableOpacity>
+      </Text>
     </View>
   );
 };
@@ -93,6 +99,12 @@ const styles = StyleSheet.create({
   signInLink: {
     color: 'blue',
     marginTop: 20,
+  },
+  agreement: {
+    marginTop: 50,
+  },
+  terms: {
+    textDecorationLine: 'underline',
   },
 });
 
