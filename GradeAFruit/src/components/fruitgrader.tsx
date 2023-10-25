@@ -15,6 +15,11 @@ const FruitGrader: React.FC = () => {
       <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>START GRADING</Text>
       </TouchableOpacity>
+      <View style={styles.footer}>
+        <Image style={styles.home} source={{ uri: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Home_icon_grey.png" }}/>
+        <Image style={styles.profile} source={{ uri: "https://i2.wp.com/umaine.edu/citl/wp-content/uploads/sites/266/2022/09/gendernetural_icon.jpg?fit=272%2C272&ssl=1" }}/>
+        <Image style={styles.settings} source={{ uri: "https://static-00.iconduck.com/assets.00/gear-settings-icon-512x510-emfroqvl.png" }}/>
+      </View>
     </View>
   );
 };
@@ -50,6 +55,28 @@ const styles = StyleSheet.create({
     height: 130,
     marginTop: 40,
     marginBottom: 30,
+  },
+  home: {
+    width: 50,
+    height: 50,
+  },
+  profile: {
+    width: 40,
+    height: 40,
+  },
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+    marginTop: 30,
+    borderTopWidth: 1,
+    paddingTop: 2,
+    borderTopColor: 'silver',
+  },
+  settings: {
+    width: 40,
+    height: 40,
   },
 });
   
