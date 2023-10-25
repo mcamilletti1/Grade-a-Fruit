@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './src/components/home';
 import SignInScreen from './src/components/signin';
 import FruitGrader from './src/components/fruitgrader';
+import Profile from './src/components/profile';
 
 
 type RootStackParamList = {
@@ -21,6 +22,7 @@ const App: React.FC = () => {
           <Stack.Screen name="Home" component={Home} />
           <Stack.Screen name="SignInScreen" component={SignInScreen} />
           <Stack.Screen name="FruitGrader" component={FruitGrader} />
+          <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

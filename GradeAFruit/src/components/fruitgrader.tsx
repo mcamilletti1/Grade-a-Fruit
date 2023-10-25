@@ -1,7 +1,20 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
 
-const FruitGrader: React.FC = () => {
+type FruitGraderProps = {
+  navigation: NavigationScreenProp<NavigationState, NavigationParams>;
+};
+
+const FruitGrader: React.FC<FruitGraderProps> = ({ navigation }) => {
+
+  const onPressHandler = () => {
+    navigation.navigate('Home');
+ }
+
+ const profileHandler = () => {
+  navigation.navigate('Profile')
+ }
   
  return (
     <View style={styles.container}>
@@ -16,9 +29,15 @@ const FruitGrader: React.FC = () => {
         <Text style={styles.buttonText}>START GRADING</Text>
       </TouchableOpacity>
       <View style={styles.footer}>
-        <Image style={styles.home} source={{ uri: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Home_icon_grey.png" }}/>
-        <Image style={styles.profile} source={{ uri: "https://i2.wp.com/umaine.edu/citl/wp-content/uploads/sites/266/2022/09/gendernetural_icon.jpg?fit=272%2C272&ssl=1" }}/>
-        <Image style={styles.settings} source={{ uri: "https://static-00.iconduck.com/assets.00/gear-settings-icon-512x510-emfroqvl.png" }}/>
+        <TouchableOpacity onPress={onPressHandler}>
+          <Image style={styles.home} source={{ uri: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Home_icon_grey.png" }}/>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={profileHandler}>
+          <Image style={styles.profile} source={{ uri: "https://i2.wp.com/umaine.edu/citl/wp-content/uploads/sites/266/2022/09/gendernetural_icon.jpg?fit=272%2C272&ssl=1" }}/>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image style={styles.settings} source={{ uri: "https://static-00.iconduck.com/assets.00/gear-settings-icon-512x510-emfroqvl.png" }}/>
+        </TouchableOpacity>
       </View>
     </View>
   );
