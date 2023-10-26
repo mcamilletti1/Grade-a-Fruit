@@ -2,7 +2,17 @@ import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { NavigationScreenProp, NavigationState, NavigationParams } from 'react-navigation';
 
-const Profile: React.FC = () => {
+type ProfileProps = {
+    navigation: NavigationScreenProp<NavigationState, NavigationParams>;
+  };
+
+
+
+const Profile: React.FC<ProfileProps> = ({ navigation }) => {
+
+    const homeHandler = () => {
+        navigation.navigate('Home');
+     }
 
     return (
         <View style={styles.container}>
@@ -37,7 +47,9 @@ const Profile: React.FC = () => {
                 </View>
             </View>
             <View style={styles.footer}>
-                <Image style={styles.house} source={{ uri: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Home_icon_grey.png"}}/>
+                <TouchableOpacity onPress={homeHandler}>
+                    <Image style={styles.house} source={{ uri: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Home_icon_grey.png"}}/>
+                </TouchableOpacity>
             </View>
         </View>
     )
