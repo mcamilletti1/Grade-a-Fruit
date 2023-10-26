@@ -29,12 +29,15 @@ const Profile: React.FC = () => {
                     </TouchableOpacity>
                 </View>
                 <View style={styles.agenda}>
-                    <Image></Image>
+                    <Image style={styles.calender} source={{ uri: "https://icones.pro/wp-content/uploads/2022/08/icone-du-calendrier-des-evenements-gris.png" }}/>
                     <TouchableOpacity>
                         <Text style={styles.heading}>AGENDA</Text>
                         <Text style={styles.subheading}>Next Meeting in 15min</Text>
                     </TouchableOpacity>
                 </View>
+            </View>
+            <View style={styles.footer}>
+                <Image style={styles.house} source={{ uri: "https://upload.wikimedia.org/wikipedia/commons/a/aa/Home_icon_grey.png"}}/>
             </View>
         </View>
     )
@@ -110,6 +113,21 @@ const styles = StyleSheet.create({
         width: 30,
         height: 30,
         marginRight: 10,
+    },
+    calender: {
+        width: 30,
+        height: 30,
+        marginRight: 10,
+    },
+    house: {
+        width: 50,
+        height: 50,
+    },
+    footer: {
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        width: '100%',
+        marginLeft: 20,
     },
 });
 
